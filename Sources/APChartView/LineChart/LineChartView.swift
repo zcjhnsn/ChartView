@@ -31,14 +31,14 @@ public struct LineChartView: View {
         }
     }
     var frame = CGSize(width: 180, height: 120)
-    private var rateValue: Int?
+    var subtitle: String?
     
     public init(data: [Double],
                 title: String,
                 legend: String? = nil,
                 style: ChartStyle = Styles.lineChartStyleOne,
                 form: CGSize? = ChartForm.medium,
-                rateValue: Int?,
+                subtitle: String? = nil,
                 dropShadow: Bool? = true,
                 valueSpecifier: String? = "%.1f") {
         
@@ -51,7 +51,7 @@ public struct LineChartView: View {
         frame = CGSize(width: self.formSize.width, height: self.formSize.height/2)
         self.dropShadow = dropShadow!
         self.valueSpecifier = valueSpecifier!
-        self.rateValue = rateValue
+        self.subtitle = subtitle
     }
     
     public var body: some View {
@@ -74,14 +74,9 @@ public struct LineChartView: View {
                         }
                         HStack {
                             
-                            if let rateValue = self.rateValue
+                            if let subtitle = self.subtitle
                             {
-                                if (rateValue ?? 0 >= 0){
-                                    Image(systemName: "arrow.up")
-                                }else{
-                                    Image(systemName: "arrow.down")
-                                }
-                                Text("\(rateValue!)%")
+                                Text("\(subtitle)")
                             }
                         }
                     }

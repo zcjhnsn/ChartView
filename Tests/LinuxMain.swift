@@ -1,6 +1,6 @@
 import XCTest
 
-import SwiftUIChartsTests
+import APChartViewTests
 
 var tests = [XCTestCaseEntry]()
 tests += SwiftUIChartsTests.allTests()

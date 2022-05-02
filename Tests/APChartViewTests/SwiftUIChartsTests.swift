@@ -1,7 +1,7 @@
 import XCTest
-@testable import SwiftUICharts
+@testable import APChartView
 
-final class SwiftUIChartsTests: XCTestCase {
+final class APChartViewTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
